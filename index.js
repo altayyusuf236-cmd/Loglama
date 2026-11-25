@@ -72,18 +72,18 @@ for(let eventName of fs.readdirSync("./events")) {
 	console.log(`[+] ${eventName} olayı başarıyla yüklendi.`)
 }
 
-// const { joinVoiceChannel } = require('@discordjs/voice');
-// client.on('ready', () => {
-//   joinVoiceChannel({
-//     channelId: "1252294134291763322",
-//     guildId: "1203806689598640148",
-//     adapterCreator: client.guilds.cache.get("1203806689598640148").voiceAdapterCreator
-//   });
-// });
-//
+const { joinVoiceChannel } = require('@discordjs/voice');
+client.on('ready', () => {
+joinVoiceChannel({
+    channelId: "1574486302374502452",
+     guildId: "1482080570296242178",
+    adapterCreator: client.guilds.cache.get("1482080570296242178").voiceAdapterCreator
+   });
+ });
+
 
 client.once("ready", async() => {
-	const rest = new Rest.REST({ version: "10" }).setToken(config.token);
+	const rest = new Rest.REST({ version: "10" }).setToken(process.env.token);
   try {
     await rest.put(DiscordApi.Routes.applicationCommands(client.user.id), {
       body: client.commands,  //
@@ -95,7 +95,7 @@ client.once("ready", async() => {
   }
 });
 
-client.login(config.token)
+client.login(process.env.token)
 .catch((err) => {
 	console.log(`[x] Discord API'ye istek gönderimi başarısız(token girmeyi unutmuşsun).` + err);
 });    
