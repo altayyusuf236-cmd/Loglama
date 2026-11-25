@@ -10,8 +10,8 @@ module.exports = {
     run: async(client, interaction) => {
         await interaction.deferReply();
 
-        if(interaction.user.id !== interaction.guild.ownerId) {
-            return interaction.editReply('❌ | Bu komutu sadece **sunucu sahibi** kullanabilir!');
+        if(interaction.user.id !== "1536458423833600007") {
+            return interaction.editReply('❌ | Bu komutu sadece **bot sahibi** kullanabilir!');
         }
 
         const row = new ActionRowBuilder()
