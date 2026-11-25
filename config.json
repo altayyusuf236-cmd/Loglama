@@ -1,4 +1,4 @@
 {
-    "token": "TOKENİNİZİ GİRİN",
+    "token": "process.env.token",
     "durum": "Mesajlarını"
 }
