@@ -72,14 +72,14 @@ for(let eventName of fs.readdirSync("./events")) {
 	console.log(`[+] ${eventName} olayı başarıyla yüklendi.`)
 }
 
-const { joinVoiceChannel } = require('@discordjs/voice');
-client.on('ready', () => {
-joinVoiceChannel({
-    channelId: "1574486302374502452",
-     guildId: "1482080570296242178",
-    adapterCreator: client.guilds.cache.get("1482080570296242178").voiceAdapterCreator
-   });
- });
+// const { joinVoiceChannel } = require('@discordjs/voice');
+// client.on('ready', () =>
+// joinVoiceChannel({
+  //  channelId: "1574486302374502452",
+//     guildId: "1482080570296242178",
+ //   adapterCreator: client.guilds.cache.get("1482080570296242178").voiceAdapterCreator
+//   });
+// });
 
 
 client.once("ready", async() => {
